@@ -133,9 +133,7 @@
         "sample-mei-cluster.xml",
         "types/door-lock.xml",
         "types/occupancy-sensing.xml",
-        "types/thermostat-user-interface-configuration.xml",
-        "fresh-ac-error_test_vendor.xml",
-        "fresh-refrigerator-errors.xml"
+        "types/thermostat-user-interface-configuration.xml"
     ],
     "manufacturersXml": "../../../../src/app/zap-templates/zcl/data-model/manufacturers.xml",
     "options": {

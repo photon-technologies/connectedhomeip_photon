@@ -133,8 +133,7 @@
         "WATER_HEATER_MODE_CLUSTER": [],
         "WEB_RTC_PROVIDER_CLUSTER": [],
         "WIFI_NETWORK_DIAGNOSTICS_CLUSTER": [],
-        "WINDOW_COVERING_CLUSTER": [],
-        "MIDEA_ALARM_TEST_CLUSTER": []
+        "WINDOW_COVERING_CLUSTER": []
     },
     "ServerDirectories": {
         "ACCESS_CONTROL_CLUSTER": ["access-control-server"],
@@ -317,7 +316,6 @@
         "WIFI_NETWORK_MANAGEMENT_CLUSTER": ["wifi-network-management-server"],
         "WINDOW_COVERING_CLUSTER": ["window-covering-server"],
         "WATER_HEATER_MANAGEMENT_CLUSTER": ["water-heater-management-server"],
-        "WATER_HEATER_MODE_CLUSTER": ["mode-base-server"],
-        "MIDEA_ALARM_TEST_CLUSTER": ["midea-air-conditioner-alarm-test-server"]
+        "WATER_HEATER_MODE_CLUSTER": ["mode-base-server"]
     }
 }

@@ -126,11 +126,6 @@ void EventManagement::Init(Messaging::ExchangeManager * apExchangeManager, uint3
     mMonotonicStartupTime = aMonotonicStartupTime;
 }
 
-void EventManagement::SetRemoteEventReporter(RemoteEventReporter * apRemoteEventReporter)
-{
-    mpRemoteEventReporter = apRemoteEventReporter;
-}
-
 CHIP_ERROR EventManagement::CopyToNextBuffer(CircularEventBuffer * apEventBuffer)
 {
     CircularTLVWriter writer;
@@ -495,13 +490,6 @@ exit:
                       opts.mTimestamp.mType == Timestamp::Type::kSystem ? "Sys" : "Epoch", ChipLogValueX64(opts.mTimestamp.mValue));
 #endif // CHIP_CONFIG_EVENT_LOGGING_VERBOSE_DEBUG_LOGS
 
-        if(mpRemoteEventReporter)
-        {
-            // If we have a remote event reporter, report the event to it.
-            // Note: This is a no-op if the remote event reporter is not set.
-            mpRemoteEventReporter->NewEventGenerated(opts.mPath, mpEventBuffer->GetQueue(), mBytesWritten);
-        }
-        
         err = InteractionModelEngine::GetInstance()->GetReportingEngine().ScheduleEventDelivery(opts.mPath, mBytesWritten);
     }
 

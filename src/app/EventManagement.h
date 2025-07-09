@@ -29,7 +29,6 @@
 #include "EventLoggingDelegate.h"
 #include <access/SubjectDescriptor.h>
 #include <app/EventLoggingTypes.h>
-#include <app/RemoteEventReporter.h>
 #include <app/MessageDef/EventDataIB.h>
 #include <app/MessageDef/StatusIB.h>
 #include <app/data-model-provider/EventsGenerator.h>
@@ -393,8 +392,6 @@ public:
     CHIP_ERROR GenerateEvent(EventLoggingDelegate * eventPayloadWriter, const EventOptions & options,
                              EventNumber & generatedEventNumber) override;
 
-    void SetRemoteEventReporter(RemoteEventReporter * apRemoteEventReporter);
-
 private:
     /**
      * @brief
@@ -566,7 +563,6 @@ private:
     Timestamp mLastEventTimestamp;    ///< The timestamp of the last event in this buffer
 
     System::Clock::Milliseconds64 mMonotonicStartupTime;
-    RemoteEventReporter * mpRemoteEventReporter = nullptr; ///< Remote event reporter to be notified when events are generated
 };
 
 } // namespace app
